@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:  
+  api:
+    image: docker.io/library/order-service-api:latest
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:8080"
+    networks:
+      - order
+
+networks:
+  order:
